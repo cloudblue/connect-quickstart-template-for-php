@@ -3,7 +3,7 @@
   "homepage": "https://bitbucket-repo-url/",
   "type": "project",
   "description": "APS Connect QuickStart Template",
-  "license": "apache",
+  "license": "proprietary",
   "config": {
     "preferred-install": "dist",
     "discard-changes": true,
