@@ -1,6 +1,11 @@
-# Connect QuickStart Template for PHP
+![Connect PHP SDK](https://github.com/ingrammicro/connect-php-sdk/raw/master/assets/connect-logo.png)
 
-The quick start template for php offers a fast and simple way to start a new Connect project
+# Connect SDK Template for PHP
+
+The Connect SDK Template for php provides developers an complete skeleton to start their automation project using the [Connect Fulfillment API](http://help.vendor.connect.cloud.im/support/solutions/articles/43000030735-fulfillment-management-module) together with the [Connect SDK for PHP](https://github.com/ingrammicro/connect-php-sdk).
+
+## Requirements
+In order to use this template you will need an environment capable to run PHP scripts, any version starting PHP 5.6 is supported. Additionally please ensure that [composer](https://getcomposer.org/) it's functional.
 
 ## Installation 
 
@@ -63,14 +68,14 @@ class ProductFulfillment extends \Connect\FulfillmentAutomation
 }
 ```
 
-## Testing 
+## Testing your project 
 
 Test the `ProductFulfillment` class is quite easy, you just need to create your tests in `tests/Feature/` directory
 by default the skeleton have some common tests.
 
-### Mocking the Connect API calls
+### Mocking the FulFillment API calls
 
-To mock a Connect API call you only have to create a valid json file with the response that you want in the `tests/Feature/` 
+To mock the fulfillment API, and with that test like if a request is retrived, you only have to create a valid json file with the response that you want in the `tests/Feature/` 
 directory with the name `YOUR-TEST-NAME.http.json` where `YOUR-TEST-NAME` is the name of the test file in where you want to 
 use that fake response, for example:
 
@@ -141,7 +146,6 @@ Finally you need to register your mocked service in the `$providers` property of
 The scope id has the format `YOUR-TEST-NAME.serviceId.json` where:
 
 - `YOUR-TEST-NAME` is the filename of the test that is running.
-- `serviceId` is the id of the service for example `logger` is the logger service id and `http` is the default Http service 
-for the Connect API.
+- `serviceId` is the id of the service for example `logger` is the logger service id and `http` is the default Http service for the FulFillment API.
 
 
