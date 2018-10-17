@@ -1,5 +1,7 @@
 .idea/
+vendor/
+tmp/
 composer.phar
 composer.lock
-/vendor/
+coverage.xml
 *nogit*

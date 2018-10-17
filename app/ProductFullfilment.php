@@ -10,6 +10,7 @@ class ProductFulfillment extends \Connect\FulfillmentAutomation
 {
 
     /**
+     * Process each pending request
      * @param \Connect\Request $request
      */
     public function processRequest($request)
@@ -36,7 +37,9 @@ class ProductFulfillment extends \Connect\FulfillmentAutomation
         } catch (\Exception $e) {
 
             $this->logger->error($e->getMessage());
-            $this->logger->dump();
+            if (is_callable([$this->logger, 'dump'])) {
+                $this->logger->dump();
+            }
         }
 
         return false;
