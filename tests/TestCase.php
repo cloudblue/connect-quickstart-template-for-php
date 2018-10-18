@@ -25,7 +25,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected $providers = [
         'logger' => '\Test\Providers\LoggerServiceProvider',
-        'http' => '\Test\Providers\HttpServiceProvider'
+        'http' => '\Test\Providers\HttpServiceProvider',
     ];
 
     /**
@@ -38,13 +38,21 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         if (!($this->app instanceof ApplicationTester)) {
 
             foreach ($this->providers as $key => $provider) {
-                $provider::$scope = substr(strrchr(get_class($this), '\\'), 1) . '.' . $key;
+                $provider::setScope(substr(strrchr(get_class($this), '\\'), 1));
             }
 
             $configuration = new Config('./config.json');
             $configuration->setRuntimeServices($this->providers);
 
             $this->app = new ApplicationTester($configuration);
+
+            /**
+             * force the deferred resolution of the dependencies
+             * before any other interaction with the internal code
+             */
+            foreach ($this->providers as $key => $provider) {
+                $this->app->{$key};
+            }
         }
     }
 }
