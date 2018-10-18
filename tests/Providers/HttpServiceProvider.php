@@ -12,15 +12,11 @@ class HttpServiceProvider extends MockServiceProvider
 {
     public function register(Container $container)
     {
-        $content = '[]';
-        $fakeRequestFile = dirname(__DIR__) . '/Feature/' . self::$scope . '.json';
-        if (is_readable($fakeRequestFile)) {
-            $content = trim(file_get_contents($fakeRequestFile));
-        }
+        $content = self::getMockContentByServiceID('http');
 
         $body = \Mockery::mock('\Psr\Http\Message\StreamInterface');
         $body->shouldReceive('getContents')
-            ->andReturn($content);
+            ->andReturn(isset($content) ? $content : '[]');
 
         $response = \Mockery::mock('\Psr\Http\Message\ResponseInterface');
         $response->shouldReceive('getStatusCode')
