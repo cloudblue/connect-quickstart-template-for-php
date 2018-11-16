@@ -1,5 +1,6 @@
 .idea/
 vendor/
+wiki/
 tmp/
 composer.phar
 composer.lock

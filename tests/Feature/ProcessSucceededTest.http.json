@@ -139,7 +139,7 @@
     "created": "2018-09-03T10:28:18.472670+00:00",
     "id": "PR-5620-6510-SUCCEEDED",
     "status": "pending",
-    "type": "test",
+    "type": "purchase",
     "updated": "2018-09-04T10:38:58.045330+00:00"
   }
 ]

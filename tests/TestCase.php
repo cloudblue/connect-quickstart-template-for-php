@@ -29,6 +29,17 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     ];
 
     /**
+     * List of Mocked Service Providers
+     * @var
+     */
+    protected $handlers = [
+        'requests' => [
+            'purchase' => '\App\Handlers\Requests\PurchaseRequestHandler',
+        ],
+        'actions' => []
+    ];
+
+    /**
      * Setup the test environment.
      * @return void
      * @throws \Connect\ConfigException
@@ -43,6 +54,8 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
             $configuration = new Config('./config.json');
             $configuration->setRuntimeServices($this->providers);
+            $configuration->setRequestHandlers($this->handlers['requests']);
+            $configuration->setActionHandlers($this->handlers['actions']);
 
             $this->app = new ApplicationTester($configuration);
 

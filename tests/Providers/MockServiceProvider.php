@@ -45,6 +45,16 @@ abstract class MockServiceProvider extends ServiceProvider
     }
 
     /**
+     * Return the mock file
+     * @param $filePath
+     * @return string
+     */
+    public static function getMockFile($filePath)
+    {
+        return dirname(__DIR__) . $filePath;
+    }
+
+    /**
      * Return the actual content of the mock file by id
      * @param string $id
      * @return string|null
@@ -53,6 +63,20 @@ abstract class MockServiceProvider extends ServiceProvider
     {
         if (is_readable(self::getMockFileByServiceID($id))) {
             return trim(file_get_contents(self::getMockFileByServiceID($id)));
+        }
+
+        return null;
+    }
+
+    /**
+     * Return the actual content of the mock file
+     * @param string $filePath
+     * @return string|null
+     */
+    public static function getMockContent($filePath)
+    {
+        if (is_readable(self::getMockFile($filePath))) {
+            return trim(file_get_contents(self::getMockFile($filePath)));
         }
 
         return null;
