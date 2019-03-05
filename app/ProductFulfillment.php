@@ -17,6 +17,15 @@ class ProductFulfillment extends \Connect\FulfillmentAutomation
     {
         // TODO: Implement processRequest() method.
     }
+    
+    /**
+    * Processing each pending Tier Config
+    * @param \Connect\TierConfigRequest $tierConfigRequest
+    */
+    public function processTierConfigRequest($tierConfigRequest)
+    {
+        // TODO: Implement processTierConfigRequest() method
+    }
 
     /**
      * Run the Product Fulfillment Request Processor
