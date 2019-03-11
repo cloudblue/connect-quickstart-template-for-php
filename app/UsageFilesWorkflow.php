@@ -1,30 +1,26 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: marc
+ * Date: 2019-03-11
+ * Time: 19:33
+ */
 
 namespace App;
 
-/**
- * Class ProductFulfillment
- * @package App
- */
-class ProductFulfillment extends \Connect\FulfillmentAutomation
-{
 
+class UsageFilesWorkflow extends \Connect\UsageFileAutomation
+{
     /**
-     * Process each pending request
-     * @param \Connect\Request $request
+     * @param $usageFile
+     * @throws \Connect\Usage\Accept
+     * @throws \Connect\Usage\Delete
+     * @throws \Connect\Usage\Skip
+     * @throws \Connect\Usage\Submit
      */
-    public function processRequest($request)
+    public function processUsageFiles($usageFile)
     {
-        // TODO: Implement processRequest() method.
-    }
-    
-    /**
-    * Processing each pending Tier Config
-    * @param \Connect\TierConfigRequest $tierConfigRequest
-    */
-    public function processTierConfigRequest($tierConfigRequest)
-    {
-        // TODO: Implement processTierConfigRequest() method
+        // TODO: Implement processUsageFiles() method.
     }
 
     /**

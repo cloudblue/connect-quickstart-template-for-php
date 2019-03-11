@@ -1,30 +1,30 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: marc
+ * Date: 2019-03-11
+ * Time: 19:21
+ */
 
 namespace App;
 
 /**
- * Class ProductFulfillment
+ * Class ListingUsageReporting
  * @package App
  */
-class ProductFulfillment extends \Connect\FulfillmentAutomation
+class ListingUsageReporting extends \Connect\UsageAutomation
 {
 
     /**
-     * Process each pending request
-     * @param \Connect\Request $request
+     * @param $listing
+     * @return bool|string
+     * @throws \Connect\Usage\FileCreationException
+     * @throws \Connect\Usage\FileRetrieveException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function processRequest($request)
+    public function processUsageForListing($listing)
     {
-        // TODO: Implement processRequest() method.
-    }
-    
-    /**
-    * Processing each pending Tier Config
-    * @param \Connect\TierConfigRequest $tierConfigRequest
-    */
-    public function processTierConfigRequest($tierConfigRequest)
-    {
-        // TODO: Implement processTierConfigRequest() method
+        // TODO: Implement processUsageForListing() method.
     }
 
     /**
