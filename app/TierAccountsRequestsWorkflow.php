@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of the Ingram Micro Cloud Blue Connect SDK.
  *
@@ -9,32 +8,21 @@
 namespace App;
 
 /**
- * Class ProductFulfillment
+ * Class TierAccountsRequestsWorkflow
  * @package App
  */
-class ProductFulfillment extends \Connect\FulfillmentAutomation
+class TierAccountsRequestsWorkflow extends \Connect\TierAccountRequestsAutomation
 {
-
     /**
-     * Process each pending request
-     * @param \Connect\Request $request
+     * @param \Connect\TierAccountRequest $request
      */
-    public function processRequest($request)
+    public function processTierAccountRequest(\Connect\TierAccountRequest $request)
     {
-        // TODO: Implement processRequest() method.
-    }
-    
-    /**
-    * Processing each pending Tier Config
-    * @param \Connect\TierConfigRequest $tierConfigRequest
-    */
-    public function processTierConfigRequest($tierConfigRequest)
-    {
-        // TODO: Implement processTierConfigRequest() method
+        //TODO: Implement processTierAccountRequest() method.
     }
 
     /**
-     * Run the Product Fulfillment Request Processor
+     * Run the Tier Account Request Processor
      * @return bool
      * @throws \GuzzleHttp\Exception\GuzzleException
      */

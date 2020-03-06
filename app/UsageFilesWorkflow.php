@@ -1,13 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: marc
- * Date: 2019-03-11
- * Time: 19:33
+ * This file is part of the Ingram Micro Cloud Blue Connect SDK.
+ *
+ * @copyright (c) 2020. Ingram Micro. All Rights Reserved.
  */
 
 namespace App;
-
 
 class UsageFilesWorkflow extends \Connect\UsageFileAutomation
 {
@@ -38,9 +36,7 @@ class UsageFilesWorkflow extends \Connect\UsageFileAutomation
              */
             $this->process();
             return true;
-
         } catch (\Exception $e) {
-
             $this->logger->error($e->getMessage());
             if (is_callable([$this->logger, 'dump'])) {
                 $this->logger->dump();

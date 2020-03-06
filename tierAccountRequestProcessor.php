@@ -2,5 +2,5 @@
 
 require 'vendor/autoload.php';
 
-$requests = new \App\ProductFulfillment();
+$requests = new \App\TierAccountsRequestsWorkflow();
 $requests->run();
