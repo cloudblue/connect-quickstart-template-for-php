@@ -3,7 +3,7 @@
 /**
  * This file is part of the Ingram Micro Cloud Blue Connect SDK.
  *
- * @copyright (c) 2018. Ingram Micro. All Rights Reserved.
+ * @copyright (c) 2020. Ingram Micro. All Rights Reserved.
  */
 
 namespace Test;
@@ -36,7 +36,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     public function setUp()
     {
         if (!($this->app instanceof ApplicationTester)) {
-
             foreach ($this->providers as $key => $provider) {
                 $provider::setScope(substr(strrchr(get_class($this), '\\'), 1));
             }
