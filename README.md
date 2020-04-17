@@ -1,5 +1,3 @@
-![Connect PHP SDK](https://github.com/ingrammicro/connect-php-sdk/raw/master/assets/connect-logo.png)
-
 # Connect SDK Template for PHP
 
 The Connect SDK Template for php provides developers an complete skeleton to start their automation project using the [Connect Fulfillment API](http://help.vendor.connect.cloud.im/support/solutions/articles/43000030735-fulfillment-management-module) together with the [Connect SDK for PHP](https://github.com/ingrammicro/connect-php-sdk).
